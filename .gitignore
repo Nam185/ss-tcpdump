@@ -1,0 +1,34 @@
+# Mã nguồn tải về, bản build, binary: script tạo lại được, không commit
+src/
+build/
+bin/
+*.tar.gz
+*.tar.xz
+
+# Corpus và output lớn: nén rồi để trên Drive, ghi đường dẫn vào triage/bugs.csv
+seeds/corpus-*/
+dynamic/**/out*/
+coverage/out/
+
+# File gây crash: KHÔNG BAO GIỜ commit (repo private nhưng vẫn giữ trên Drive của nhóm)
+**/crashes/
+**/hangs/
+**/queue/
+crash-*
+leak-*
+timeout-*
+id:*
+*.crash
+
+# File sinh ra khi build/đo coverage
+*.o
+*.a
+*.gcda
+*.gcno
+*.info
+
+# Rác hệ thống, IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
