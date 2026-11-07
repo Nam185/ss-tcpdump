@@ -13,7 +13,7 @@ echo "- CPU: $(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2 | sed 's/^ //')
 echo "- RAM: $(free -h | awk '/^Mem:/ {print $2}')"
 echo "- clang: $(v clang --version)"
 echo "- gcc: $(v gcc --version)"
-echo "- AFL++: $(command -v afl-fuzz >/dev/null && (afl-fuzz -h 2>&1 | grep -m1 -oE '\+\+[0-9][^ ]*' || echo 'có') || echo 'chưa cài')"
+echo "- AFL++: $(command -v afl-fuzz >/dev/null && (afl-fuzz -h 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -m1 -oE '\+\+[0-9][0-9a-z.]*' || echo 'có') || echo 'chưa cài')"
 echo "- Valgrind: $(v valgrind --version)"
 echo "- cppcheck: $(v cppcheck --version)"
 echo "- ESBMC: $(v esbmc --version)"
