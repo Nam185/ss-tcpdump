@@ -35,7 +35,7 @@ genhtml -q "$OUT/baseline.info" --output-directory "$OUT/html" "${RC[@]}" "${IGN
   echo "Baseline coverage: tcpdump $VER (biến thể cov), $(date -Iseconds)"
   echo "Lệnh: tcpdump $TCPDUMP_FLAGS -r <file>, timeout ${PER_FILE_TIMEOUT}s/file"
   echo "Seed corpus: seeds/corpus-v1 ($((ok + bad)) file; $ok chạy xong, $bad thoát với mã lỗi hoặc timeout)"
-  lcov --summary "$OUT/baseline.info" "${RC[@]}" "${IGN[@]}" 2>&1 | grep -E 'lines|functions|branches'
+  lcov --summary "$OUT/baseline.info" "${RC[@]}" "${IGN[@]}" 2>&1 | grep -E '^\s+(lines|functions|branches)\.'
 } | tee "$RES/summary.txt"
 bash "$ROOT/scripts/machine_info.sh" > "$RES/MACHINE.md"
 echo "[coverage] Báo cáo HTML: coverage/out/$VER-baseline/html/index.html"

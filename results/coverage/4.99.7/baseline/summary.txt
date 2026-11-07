@@ -1,0 +1,6 @@
+Baseline coverage: tcpdump 4.99.7 (biến thể cov), 2026-11-08T00:11:35+07:00
+Lệnh: tcpdump -nn -vvv -e -XX -r <file>, timeout 10s/file
+Seed corpus: seeds/corpus-v1 (723 file; 723 chạy xong, 0 thoát với mã lỗi hoặc timeout)
+  lines.......: 47.7% (17006 of 35651 lines)
+  functions...: 68.7% (771 of 1123 functions)
+  branches....: 36.4% (8503 of 23354 branches)
